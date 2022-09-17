@@ -41,8 +41,38 @@
   </section>
 
   <section class="section_3">
-    <div class="musicor">
-      <img src="./assets/portfolio_musicor.png" class="section_3_img" />
+    <div class="section_3_pageButton_top">
+      <div class="section_3_pageButton_container">
+        <button @click="prevPage">LEFT</button>
+        <button @click="nextPage">RIGHT</button>
+      </div>
+    </div>
+
+    <div class="section_3_items">
+      <div class="section_3_img_container">
+        <img src="./assets/portfolio_musicor.png" />
+      </div>
+      <div class="section_3_text_container">
+        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
+      </div>
+    </div>
+
+    <div class="section_3_items">
+      <div class="section_3_img_container">
+        <img src="./assets/portfolio_netflix.png" />
+      </div>
+      <div class="section_3_text_container">
+        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
+      </div>
+    </div>
+
+    <div class="section_3_items">
+      <div class="section_3_img_container">
+        <img src="./assets/portfolio_jinbokNews.png" />
+      </div>
+      <div class="section_3_text_container">
+        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
+      </div>
     </div>
   </section>
 </template>
@@ -56,6 +86,14 @@ export default {
     };
   },
   components: {},
+  methods: {
+    prevPage() {
+      console.log("ok");
+      transform:translateX(-100%)
+    },
+
+    nextPage() {},
+  },
 };
 </script>
 
@@ -93,7 +131,6 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  align-self: center;
 }
 
 .nav_logo {
@@ -176,11 +213,30 @@ body {
   top: 200vh;
   height: 100vh;
   width: 100vw;
+  display: flex;
 }
 
-.section_3_img {
-  max-width: 100vw;
-  max-height: 100vh;
-  align-content: center;
+.section_3_pageButton_top {
+  position: absolute;
+  left: 5%;
+}
+
+.section_3_pageButton_container {
+  position: absolute;
+  top: 50vh;
+  display: flex;
+  width: 90vw;
+  justify-content: space-between;
+}
+
+.section_3 img {
+  width: 100%;
+}
+
+.section_3_items {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  min-width: 100vw;
 }
 </style>
