@@ -1,59 +1,52 @@
 <template>
   <section class="section_3">
-    <carousel @nextPage="nextPage" @prevPage="prevPage">
-      <carousel-slide
+    <swiper
+      :modules="modules"
+      effect="fade"
+      :slides-per-view="1"
+      :space-between="0"
+      navigation
+      :pagination="{ clickable: true }"
+      :loop="true"
+      :autoplay="false"
+      :speed="500"
+    >
+      <swiper-slide
         v-for="(slide, index) in slides"
         :key="slide"
         :index="index"
-        :visibleSlide="visibleSlide"
-        :direction="direction"
       >
         <img :src="slide" />
-      </carousel-slide>
-    </carousel>
+      </swiper-slide>
+    </swiper>
   </section>
 </template>
 
 <script>
-import Carousel from "../components/Carousel.vue";
-import CarouselSlide from "../components/CarouselSlide.vue";
+import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { EffectFade } from "swiper";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 export default {
-  data() {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+
+  setup() {
     return {
       slides: [
         require("../assets/portfolio_musicor.png"),
         require("../assets/portfolio_netflix.png"),
         require("../assets/portfolio_jinbokNews.png"),
       ],
-      visibleSlide: 0,
-      direction: "",
+      modules: [Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay],
     };
-  },
-
-  components: {
-    Carousel,
-    CarouselSlide,
-  },
-
-  methods: {
-    prevPage() {
-      if (this.visibleSlide <= 0) {
-        this.visibleSlide >= this.slides.length - 1;
-      } else {
-        this.visibleSlide--;
-      }
-      this.direction = "right";
-    },
-
-    nextPage() {
-      if (this.visibleSlide >= this.slides.length - 1) {
-        this.visibleSlideSlide = 0;
-      } else {
-        this.visibleSlide++;
-      }
-      this.direction = "left";
-    },
   },
 };
 </script>
@@ -68,9 +61,16 @@ export default {
   white-space: nowrap;
 }
 
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+}
+
 .section_3 img {
   height: 100vh;
   transform: scale(0.85);
+  pointer-events: none;
+  user-select: none;
 }
 
 .section_3_text_container {

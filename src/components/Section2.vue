@@ -1,10 +1,7 @@
 <template>
   <section class="section_2">
     <div>
-      <img
-        src="../assets/section_2_img.jpg"
-        style="max-width: 50vw; min-height: 100vh; object-fit: cover"
-      />
+      <img src="../assets/section_2_img.jpg" />
     </div>
     <div class="section_2_text_section">
       <h2 class="section_2_about">ABOUT</h2>
@@ -27,6 +24,14 @@ export default {};
   background-color: rgb(15, 25, 34);
   display: flex;
   overflow: hidden;
+}
+
+.section_2 img {
+  position: absolute;
+  bottom: 0;
+  max-width: 50vw;
+  min-height: 100vh;
+  object-fit: cover;
 }
 
 .section_2_text_section {
