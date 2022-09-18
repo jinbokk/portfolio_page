@@ -5,11 +5,13 @@
     </div>
   </transition>
 </template>
+
 <script>
 export default {
   props: ["visibleSlide", "index", "direction"],
 };
 </script>
+
 <style>
 .left-enter-active {
   animation: leftInAnimation 0.4s ease-in-out;
