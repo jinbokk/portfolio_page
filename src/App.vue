@@ -41,72 +41,67 @@
   </section>
 
   <section class="section_3">
-    <div class="section_3_pageButton_top">
-      <div class="section_3_pageButton_container">
-        <button @click="prevPage">LEFT</button>
-        <button @click="nextPage">RIGHT</button>
-      </div>
-    </div>
-
-    <div class="section_3_items">
-      <div class="section_3_img_container">
-        <img src="./assets/portfolio_musicor.png" />
-      </div>
-      <div class="section_3_text_container">
-        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
-      </div>
-    </div>
-
-    <div class="section_3_items">
-      <div class="section_3_img_container">
-        <img src="./assets/portfolio_netflix.png" />
-      </div>
-      <div class="section_3_text_container">
-        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
-      </div>
-    </div>
-
-    <div class="section_3_items">
-      <div class="section_3_img_container">
-        <img src="./assets/portfolio_jinbokNews.png" />
-      </div>
-      <div class="section_3_text_container">
-        내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기
-      </div>
-    </div>
+    <carousel @nextPage="nextPage" @prevPage="prevPage">
+      <carousel-slide
+        v-for="(slide, index) in slides"
+        :key="slide"
+        :index="index"
+        :visibleSlide="visibleSlide"
+        :direction="direction"
+      >
+        <img :src="slide" />
+      </carousel-slide>
+    </carousel>
   </section>
 </template>
 
 <script>
+import Carousel from "./components/Carousel.vue";
+import CarouselSlide from "./components/CarouselSlide.vue";
+
 export default {
   name: "App",
+
   data() {
     return {
-      //data 보관함
+      slides: [
+        require("./assets/portfolio_musicor.png"),
+        require("./assets/portfolio_netflix.png"),
+        require("./assets/portfolio_jinbokNews.png"),
+      ],
+      visibleSlide: 0,
+      direction: "",
     };
   },
-  components: {},
+
+  components: {
+    Carousel,
+    CarouselSlide,
+  },
+
   methods: {
     prevPage() {
-      console.log("ok");
-      transform:translateX(-100%)
+      if (this.visibleSlide <= 0) {
+        this.visibleSlide >= this.slides.length - 1;
+      } else {
+        this.visibleSlide--;
+      }
+      this.direction = "right";
     },
 
-    nextPage() {},
+    nextPage() {
+      if (this.visibleSlide >= this.slides.length - 1) {
+        this.visibleSlideSlide = 0;
+      } else {
+        this.visibleSlide++;
+      }
+      this.direction = "left";
+    },
   },
 };
 </script>
 
 <style>
-/* #App {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-} */
-
 html,
 body {
   color: rgb(220, 220, 220);
@@ -206,37 +201,5 @@ body {
   flex-direction: column;
   justify-content: center;
   padding-left: 5rem;
-}
-
-.section_3 {
-  position: absolute;
-  top: 200vh;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-}
-
-.section_3_pageButton_top {
-  position: absolute;
-  left: 5%;
-}
-
-.section_3_pageButton_container {
-  position: absolute;
-  top: 50vh;
-  display: flex;
-  width: 90vw;
-  justify-content: space-between;
-}
-
-.section_3 img {
-  width: 100%;
-}
-
-.section_3_items {
-  float: left;
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
 }
 </style>
