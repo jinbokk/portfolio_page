@@ -3,6 +3,7 @@
   <section-1></section-1>
   <section-2></section-2>
   <section-3></section-3>
+  <section-4></section-4>
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import NavBar from "./components/NavBar.vue";
 import Section1 from "./components/Section1.vue";
 import Section2 from "./components/Section2.vue";
 import Section3 from "./components/Section3.vue";
+import Section4 from "./components/Section4.vue";
 
 export default {
   name: "App",
@@ -19,7 +21,8 @@ export default {
     Section1,
     Section2,
     Section3,
-  }
+    Section4,
+  },
 };
 </script>
 
