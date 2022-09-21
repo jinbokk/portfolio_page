@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="landing_page">
     <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
@@ -23,13 +22,14 @@ export default {};
   text-align: center;
   line-height: 1.5;
   font-weight: bold;
-  background-color: rgb(105, 25, 255);
+  background-color: brown;
 }
 
 .landing_page_title {
   font-size: 7rem;
   font-weight: bold;
   color: aliceblue;
+  text-shadow: rgb(30, 30, 30) 12px 10px;
 }
 
 .landing_page_button {
@@ -39,12 +39,13 @@ export default {};
   border: rgb(220, 220, 220) solid 1px;
   padding: 1rem;
   width: auto;
-  box-shadow: inset 0 0 0 0 #98369a;
+  box-shadow: inset 0 0 0 0 black;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-shadow: rgb(30, 30, 30) 3px 3px;
 }
 
 .landing_page_button:hover {
-  box-shadow: inset 130px 0 0 0 #98369a;
+  box-shadow: inset 130px 0 0 0 black;
   color: white;
 }
 </style>

@@ -67,11 +67,11 @@ export default {
 .nav_container_menu a {
   display: flex;
   align-items: center;
-  margin-right: 0.7rem;
+  margin-right: 2rem;
 }
 
 .nav_container_icon img {
-  margin-right: 0.7rem;
+  margin-right: 1.2rem;
 }
 
 .nav_icon {
