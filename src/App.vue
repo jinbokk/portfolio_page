@@ -1,9 +1,12 @@
 <template>
-  <nav-bar></nav-bar>
-  <section-1></section-1>
-  <section-2></section-2>
-  <section-3></section-3>
-  <section-4></section-4>
+  <div>
+    <nav-bar></nav-bar>
+    <section-1></section-1>
+    <section-2></section-2>
+    <section-3></section-3>
+    <!-- <section-4></section-4> -->
+    <!-- <section-5></section-5> -->
+  </div>
 </template>
 
 <script>
@@ -12,6 +15,7 @@ import Section1 from "./components/Section1.vue";
 import Section2 from "./components/Section2.vue";
 import Section3 from "./components/Section3.vue";
 import Section4 from "./components/Section4.vue";
+import Section5 from "./components/Section5.vue";
 
 export default {
   name: "App",
@@ -22,6 +26,7 @@ export default {
     Section2,
     Section3,
     Section4,
+    Section5,
   },
 };
 </script>

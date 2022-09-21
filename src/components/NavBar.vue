@@ -8,12 +8,8 @@
           <a>CONTACT</a>
         </div>
         <div class="nav_container_icon">
-          <img src="../assets/github_icon.png" class="nav_icon" />
-          <img
-            src="../assets/velog_icon.png"
-            class="nav_icon"
-            style="margin-right: 0"
-          />
+          <img :src="github_icon" class="nav_icon" />
+          <img :src="velog_icon" class="nav_icon" style="margin-right: 0" />
         </div>
       </div>
     </div>
@@ -21,7 +17,14 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      github_icon: require("../assets/github_icon.png"),
+      velog_icon: require("../assets/velog_icon.png"),
+    };
+  },
+};
 </script>
 
 <style>

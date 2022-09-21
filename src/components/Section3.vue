@@ -1,53 +1,32 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <section class="section_3">
-    <swiper
-      :modules="modules"
-      effect="fade"
-      :slides-per-view="1"
-      :space-between="0"
-      navigation
-      :pagination="{ clickable: true }"
-      :loop="true"
-      :autoplay="false"
-      :speed="500"
-    >
-      <swiper-slide
+    <v-carousel height="100%">
+      <!-- <v-row class="fill-height" align="center" justify="center"> -->
+      <v-carousel-item
         v-for="(slide, index) in slides"
-        :key="slide"
-        :index="index"
-      >
-        <img :src="slide" />
-      </swiper-slide>
-    </swiper>
+        :key="index"
+        :src="slide"
+        :disabled="true"
+        reverse-transition="fade-transition"
+        transition="fade-transition"
+        class="v-carousel_item"
+      ></v-carousel-item>
+      <!-- </v-row> -->
+    </v-carousel>
   </section>
 </template>
 
 <script>
-import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { EffectFade } from "swiper";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/effect-fade";
-
 export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
-
-  setup() {
-    return {
-      slides: [
-        require("../assets/portfolio_musicor.png"),
-        require("../assets/portfolio_netflix.png"),
-        require("../assets/portfolio_jinbokNews.png"),
-      ],
-      modules: [Navigation, Pagination, Scrollbar, A11y, EffectFade, Autoplay],
-    };
-  },
+  data: () => ({
+    model: 0,
+    slides: [
+      require("../assets/portfolio_musicor.png"),
+      require("../assets/portfolio_netflix.png"),
+      require("../assets/portfolio_jinbokNews.png"),
+    ],
+  }),
 };
 </script>
 
@@ -61,20 +40,9 @@ export default {
   white-space: nowrap;
 }
 
-.swiper-slide {
-  display: flex;
-  justify-content: center;
-}
-
-.section_3 img {
-  height: 100vh;
-  transform: scale(0.85);
+.v-carousel_item {
+  height: 200px;
   pointer-events: none;
   user-select: none;
-}
-
-.section_3_text_container {
-  width: 100vw;
-  height: 100vh;
 }
 </style>

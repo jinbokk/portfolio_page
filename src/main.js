@@ -1,7 +1,10 @@
-import { createApp } from "vue";
+import Vue from "vue";
 import App from "./App.vue";
-import "bootstrap/dist/css/bootstrap.css";
+import vuetify from "@/plugins/vuetify.js";
 
-createApp(App).mount("#app");
+Vue.config.productionTip = false;
 
-import "bootstrap/dist/js/bootstrap.js";
+new Vue({
+  vuetify,
+  render: (h) => h(App),
+}).$mount("#app");

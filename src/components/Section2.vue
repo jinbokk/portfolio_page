@@ -1,9 +1,10 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <section class="section_2">
-    <div>
-      <img src="../assets/section_2_img.jpg" />
+    <div class="section_2_img_container">
+      <img :src="profile_img" />
     </div>
-    <div class="section_2_text_section">
+    <div class="section_2_text_container">
       <h2 class="section_2_about">ABOUT</h2>
       <h3 class="section_2_title"></h3>
       <p>내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기</p>
@@ -12,7 +13,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      profile_img: require("../assets/section_2_img.jpg"),
+    };
+  },
+};
 </script>
 
 <style>
@@ -26,6 +33,10 @@ export default {};
   overflow: hidden;
 }
 
+.section_2_img_container {
+  width: 50vw;
+}
+
 .section_2 img {
   position: absolute;
   bottom: 0;
@@ -34,7 +45,7 @@ export default {};
   object-fit: cover;
 }
 
-.section_2_text_section {
+.section_2_text_container {
   display: flex;
   flex-direction: column;
   justify-content: center;

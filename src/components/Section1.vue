@@ -1,3 +1,4 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <section class="section_1">
     <h1 class="section_1_title">With<br />Infinite<br />Potential</h1>
