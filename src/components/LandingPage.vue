@@ -1,9 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <section class="section_1">
-    <h1 class="section_1_title">With<br />Infinite<br />Potential</h1>
-    <div class="section_1_button">HELLO, JINBOK!</div>
-  </section>
+  <div class="landing_page">
+    <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
+    <div class="landing_page_button">HELLO, JINBOK!</div>
+  </div>
 </template>
 
 <script>
@@ -11,8 +11,9 @@ export default {};
 </script>
 
 <style>
-.section_1 {
+.landing_page {
   position: fixed;
+  top: 0;
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -25,13 +26,13 @@ export default {};
   background-color: rgb(105, 25, 255);
 }
 
-.section_1_title {
+.landing_page_title {
   font-size: 7rem;
   font-weight: bold;
   color: aliceblue;
 }
 
-.section_1_button {
+.landing_page_button {
   cursor: pointer;
   color: aliceblue;
   margin-top: 5rem;
@@ -42,7 +43,7 @@ export default {};
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
-.section_1_button:hover {
+.landing_page_button:hover {
   box-shadow: inset 130px 0 0 0 #98369a;
   color: white;
 }

@@ -1,32 +1,29 @@
 <template>
   <div>
     <nav-bar></nav-bar>
-    <section-1></section-1>
-    <section-2></section-2>
-    <section-3></section-3>
-    <!-- <section-4></section-4> -->
-    <!-- <section-5></section-5> -->
+    <landing-page></landing-page>
+    <about-page></about-page>
+    <carousel-page></carousel-page>
+    <contact-page></contact-page>
   </div>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
-import Section1 from "./components/Section1.vue";
-import Section2 from "./components/Section2.vue";
-import Section3 from "./components/Section3.vue";
-import Section4 from "./components/Section4.vue";
-import Section5 from "./components/Section5.vue";
+import LandingPage from "./components/LandingPage.vue";
+import AboutPage from "./components/AboutPage.vue";
+import CarouselPage from "./components/CarouselPage.vue";
+import ContactPage from "./components/ContactPage.vue";
 
 export default {
   name: "App",
 
   components: {
     NavBar,
-    Section1,
-    Section2,
-    Section3,
-    Section4,
-    Section5,
+    LandingPage,
+    AboutPage,
+    CarouselPage,
+    ContactPage,
   },
 };
 </script>
@@ -40,5 +37,9 @@ body {
   width: 100vw;
   margin: 0;
   padding: 0;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; */
 }
 </style>
