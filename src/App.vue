@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @scroll="handleScroll">
     <nav-bar></nav-bar>
     <landing-page></landing-page>
     <about-page></about-page>
@@ -24,6 +24,12 @@ export default {
     AboutPage,
     CarouselPage,
     ContactPage,
+  },
+
+  methods: {
+    handleScroll(e) {
+      console.log("scroll fired", e);
+    },
   },
 };
 </script>

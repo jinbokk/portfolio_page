@@ -1,5 +1,4 @@
-<!-- eslint-disable vue/multi-word-component-names -->
-<template>
+<!-- <template>
   <v-form v-model="valid">
     <v-container>
       <v-row>
@@ -63,4 +62,4 @@
     }),
   }
 </script>
-<style></style>
+<style></style> -->
