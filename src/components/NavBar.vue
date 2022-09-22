@@ -91,6 +91,7 @@ export default {
 
 .logo_deco {
   color: rgb(94, 239, 206);
+  text-shadow: rgb(255, 255, 255, 0.4) 3px 0px;
   font-size: 2.5rem;
   margin-right: 0.5rem;
 }

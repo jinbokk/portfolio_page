@@ -1,6 +1,6 @@
 <template>
   <div class="landing_page_container_top">
-    <div class="landing_page_container" ref="landing_page_container">
+    <div class="landing_page_container">
       <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
       <button class="landing_page_button" @click="handleClick">
         HELLO, JINBOK!
@@ -10,24 +10,19 @@
 </template>
 
 <script>
-
 export default {
-  data() {},
-
   mounted() {
-    const landing_page_container = this.$refs.landing_page_container;
-    window.addEventListener(
-      "scroll",
-      this.handleScroll(landing_page_container)
-    );
+    const scrollElement = document.getElementById("landing_page");
+    window.addEventListener("scroll", this.handleScroll(scrollElement));
   },
 
   methods: {
     handleScroll(e) {
       // const windowScrollY = window.scrollY;
+      console.log(e);
       console.log(e.style);
-      // e.style.backgroundColor = "red";
     },
+
     handleClick() {
       console.log("clicked!");
       window.scroll({
@@ -64,6 +59,8 @@ export default {
   font-weight: bold;
   color: aliceblue;
   text-shadow: rgb(94, 239, 206, 0.5) 8px 8px;
+  pointer-events: none;
+  user-select: none;
 }
 
 .landing_page_button {

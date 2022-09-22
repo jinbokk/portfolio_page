@@ -1,13 +1,19 @@
 <template>
   <div class="side_bar_left_container">
-    <img :src="github_icon" class="side_bar_icon" />
-    <img :src="velog_icon" class="side_bar_icon" style="margin-right: 0" />
+    <a href="https://github.com/jinbokk" target="_blank">
+      <img :src="github_icon" class="side_bar_icon" />
+    </a>
+    <a href="https://velog.io/@jinbokk" target="_blank">
+      <img :src="velog_icon" class="side_bar_icon" />
+    </a>
     <div class="deco_line">
       &#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;
     </div>
   </div>
   <div class="side_bar_right_container">
-    <div class="e_mail">eyelash1024@naver.com</div>
+    <a class="e_mail" href="mailto:eyelash1024@naver.com"
+      >eyelash1024@naver.com</a
+    >
     <div class="deco_line">
       &#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;&#8213;
     </div>
@@ -65,6 +71,8 @@ export default {
 }
 
 .e_mail {
+  text-decoration: none;
+  color: white;
   cursor: pointer;
   transition: 0.3s;
 }

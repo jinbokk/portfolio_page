@@ -7,7 +7,7 @@
       <div class="about_page_text_container">
         <h2 class="about_page_about">ABOUT</h2>
         <h3 class="about_page_title"></h3>
-        <p>내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기내용쓰기</p>
+        <p>안녕하세요 이진복 입니다</p>
       </div>
     </div>
   </div>
