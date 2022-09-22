@@ -1,4 +1,3 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="carousel_page">
     <v-carousel height="100vh" width="100vw" cycle show-arrows-on-hover>

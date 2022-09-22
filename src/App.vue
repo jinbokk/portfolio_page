@@ -1,11 +1,9 @@
 <template>
-  <div @scroll="handleScroll">
-    <nav-bar></nav-bar>
-    <landing-page></landing-page>
-    <about-page></about-page>
-    <carousel-page></carousel-page>
-    <contact-page></contact-page>
-  </div>
+  <nav-bar></nav-bar>
+  <landing-page class="scroll_element"></landing-page>
+  <about-page class="scroll_element"></about-page>
+  <carousel-page class="scroll_element"></carousel-page>
+  <contact-page class="scroll_element"></contact-page>
 </template>
 
 <script>
@@ -16,7 +14,9 @@ import CarouselPage from "./components/CarouselPage.vue";
 import ContactPage from "./components/ContactPage.vue";
 
 export default {
-  name: "App",
+  mounted() {
+    document.getElementById("app").classList.add("scroll_container");
+  },
 
   components: {
     NavBar,
@@ -25,12 +25,6 @@ export default {
     CarouselPage,
     ContactPage,
   },
-
-  methods: {
-    handleScroll(e) {
-      console.log("scroll fired", e);
-    },
-  },
 };
 </script>
 
@@ -38,14 +32,21 @@ export default {
 html,
 body {
   color: rgb(220, 220, 220);
-  background-color: rgb(40, 40, 40);
+  background-color: rgb(29, 29, 29);
   height: 100vh;
   width: 100vw;
   margin: 0;
   padding: 0;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
+  overflow: hidden;
+}
+
+.scroll_container {
+  height: 100%;
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+}
+
+.scroll_element {
+  scroll-snap-align: start;
 }
 </style>

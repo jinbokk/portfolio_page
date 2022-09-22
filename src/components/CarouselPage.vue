@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel_page">
+  <div class="carousel_page_container_top">
 
   </div>
 </template>
@@ -18,12 +18,9 @@ export default {
 </script>
 
 <style>
-.carousel_page {
-  position: relative;
-  top: 200vh;
+.carousel_page_container_top {
   height: 100vh;
   width: 100vw;
   background-color: brown;
-  /* white-space: nowrap; */
 }
 </style>

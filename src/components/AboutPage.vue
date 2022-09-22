@@ -1,6 +1,5 @@
-<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div class="about_page">
+  <div class="about_page_container_top">
     <div class="about_page_img_container">
       <img :src="profile_img" />
     </div>
@@ -24,23 +23,20 @@ export default {
 y
 
 <style>
-.about_page {
-  position: absolute;
-  top: 100vh;
+.about_page_container_top {
   height: 100vh;
   width: 100vw;
   background-color: rgb(15, 25, 34);
   display: flex;
-  overflow: hidden;
 }
 
 .about_page_img_container {
   width: 50vw;
+  overflow: hidden;
 }
 
-.about_page img {
-  position: absolute;
-  bottom: 0;
+.about_page_img_container img {
+  position: relative;
   max-width: 50vw;
   min-height: 100vh;
   object-fit: cover;
