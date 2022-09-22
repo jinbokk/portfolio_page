@@ -1,13 +1,15 @@
 <template>
-  <nav-bar></nav-bar>
-  <landing-page class="scroll_element"></landing-page>
-  <about-page class="scroll_element"></about-page>
-  <carousel-page class="scroll_element"></carousel-page>
-  <contact-page class="scroll_element"></contact-page>
+  <nav-bar @go_to_page="goToPage"></nav-bar>
+  <side-bar></side-bar>
+  <landing-page class="scroll_element" id="landing_page"></landing-page>
+  <about-page class="scroll_element" id="about_page"></about-page>
+  <carousel-page class="scroll_element" id="carousel_page"></carousel-page>
+  <contact-page class="scroll_element" id="contact_page"></contact-page>
 </template>
 
 <script>
 import NavBar from "./components/NavBar.vue";
+import SideBar from "./components/SideBar.vue";
 import LandingPage from "./components/LandingPage.vue";
 import AboutPage from "./components/AboutPage.vue";
 import CarouselPage from "./components/CarouselPage.vue";
@@ -20,6 +22,7 @@ export default {
 
   components: {
     NavBar,
+    SideBar,
     LandingPage,
     AboutPage,
     CarouselPage,
@@ -32,7 +35,7 @@ export default {
 html,
 body {
   color: rgb(220, 220, 220);
-  background-color: rgb(29, 29, 29);
+  background-color: rgb(11, 25, 47);
   height: 100vh;
   width: 100vw;
   margin: 0;

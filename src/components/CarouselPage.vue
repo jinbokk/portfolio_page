@@ -21,6 +21,5 @@ export default {
 .carousel_page_container_top {
   height: 100vh;
   width: 100vw;
-  background-color: brown;
 }
 </style>

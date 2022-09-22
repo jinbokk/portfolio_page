@@ -1,15 +1,21 @@
 <template>
   <div class="nav_container_top" :class="{ scrolled: handleScroll }">
     <div class="nav_container">
-      <a class="nav_logo">JINBOK LEE</a>
+      <a class="nav_logo" @click="scrollToPage('landing_page')"
+        ><span class="logo_deco">J</span>INBOK LEE</a
+      >
       <div class="nav_container_items">
         <div class="nav_container_menu">
-          <a>ABOUT</a>
-          <a>CONTACT</a>
-        </div>
-        <div class="nav_container_icon">
-          <img :src="github_icon" class="nav_icon" />
-          <img :src="velog_icon" class="nav_icon" style="margin-right: 0" />
+          <a @click="scrollToPage('about_page')"
+            ><span class="text_deco">01.</span>ABOUT</a
+          >
+          <a @click="scrollToPage('carousel_page')"
+            ><span class="text_deco">02.</span>PORTFOLIO</a
+          >
+          <a @click="scrollToPage('contact_page')"
+            ><span class="text_deco">03.</span>CONTACT</a
+          >
+          <button class="cover_letter_btn">COVER LETTER</button>
         </div>
       </div>
     </div>
@@ -20,8 +26,6 @@
 export default {
   data() {
     return {
-      github_icon: require("../assets/github_icon.png"),
-      velog_icon: require("../assets/velog_icon.png"),
       handleScroll: null,
     };
   },
@@ -41,6 +45,12 @@ export default {
       }
       this.scrollPositionY = false;
     },
+
+    scrollToPage(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
@@ -52,6 +62,7 @@ export default {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  height: 70px;
   padding: 1rem 0;
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
@@ -75,6 +86,13 @@ export default {
   font-size: 1.2rem;
   font-weight: bold;
   color: aliceblue;
+  cursor: pointer;
+}
+
+.logo_deco {
+  color: rgb(94, 239, 206);
+  font-size: 2.5rem;
+  margin-right: 0.5rem;
 }
 
 .nav_container_items {
@@ -92,13 +110,32 @@ export default {
   display: flex;
   align-items: center;
   margin-right: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav_container_icon img {
-  margin-right: 1.2rem;
+.nav_container_menu a:hover {
+  color: rgb(94, 239, 206);
+  transition: 0.3s;
 }
 
-.nav_icon {
-  width: 25px;
+.text_deco {
+  color: rgb(94, 239, 206);
+  margin-right: 0.7rem;
+}
+
+.cover_letter_btn {
+  cursor: pointer;
+  background: none;
+  border: rgb(94, 239, 206) 1px solid;
+  color: rgb(94, 239, 206);
+  font-weight: bold;
+  transition: 0.3s;
+  padding: 0.8rem;
+}
+
+.cover_letter_btn:hover {
+  background-color: rgb(94, 239, 206, 0.5);
+  transition: 0.3s;
 }
 </style>

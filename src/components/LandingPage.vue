@@ -2,12 +2,15 @@
   <div class="landing_page_container_top">
     <div class="landing_page_container" ref="landing_page_container">
       <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
-      <div class="landing_page_button">HELLO, JINBOK!</div>
+      <button class="landing_page_button" @click="handleClick">
+        HELLO, JINBOK!
+      </button>
     </div>
   </div>
 </template>
 
 <script>
+
 export default {
   data() {},
 
@@ -25,6 +28,13 @@ export default {
       console.log(e.style);
       // e.style.backgroundColor = "red";
     },
+    handleClick() {
+      console.log("clicked!");
+      window.scroll({
+        top: 100,
+        behavior: "smooth",
+      });
+    },
   },
 };
 </script>
@@ -40,7 +50,6 @@ export default {
   text-align: center;
   line-height: 1.5;
   font-weight: bold;
-  background-color: rgb(55, 55, 55);
 }
 
 .landing_page_container {
@@ -54,7 +63,7 @@ export default {
   font-size: 7rem;
   font-weight: bold;
   color: aliceblue;
-  text-shadow: rgb(30, 30, 30) 12px 10px;
+  text-shadow: rgb(94, 239, 206, 0.5) 8px 8px;
 }
 
 .landing_page_button {
@@ -62,15 +71,18 @@ export default {
   color: aliceblue;
   margin-top: 1rem;
   border: rgb(220, 220, 220) solid 1px;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
   padding: 1rem;
-  width: 120px;
+  width: 150px;
   box-shadow: inset 0 0 0 0 black;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-  text-shadow: rgb(30, 30, 30) 3px 3px;
 }
 
 .landing_page_button:hover {
-  box-shadow: inset 150px 0 0 0 black;
-  color: white;
+  box-shadow: inset 160px 0 0 0 rgb(94, 239, 206);
+  color: black;
+  border: rgb(220, 220, 220, 0.5) solid 1px;
 }
 </style>
