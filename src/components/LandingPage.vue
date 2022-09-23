@@ -20,7 +20,7 @@ export default {
     handleScroll(e) {
       // const windowScrollY = window.scrollY;
       console.log(e);
-      console.log(e.style);
+      console.log(e.style); // something wrong !!!!!!!!!!!!!
     },
 
     handleClick() {
@@ -75,6 +75,7 @@ export default {
   width: 150px;
   box-shadow: inset 0 0 0 0 black;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  user-select: none;
 }
 
 .landing_page_button:hover {

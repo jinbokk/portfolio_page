@@ -1,5 +1,5 @@
 <template>
-  <nav-bar @go_to_page="goToPage"></nav-bar>
+  <nav-bar></nav-bar>
   <side-bar></side-bar>
   <landing-page class="scroll_element" id="landing_page"></landing-page>
   <about-page class="scroll_element" id="about_page"></about-page>
@@ -41,12 +41,19 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  user-select: none;
 }
 
 .scroll_container {
   height: 100%;
   overflow: auto;
   scroll-snap-type: y mandatory;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scroll_container::-webkit-scrollbar {
+  display: none;
 }
 
 .scroll_element {

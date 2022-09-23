@@ -87,6 +87,12 @@ export default {
   font-weight: bold;
   color: aliceblue;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav_logo:hover {
+  color: rgb(94, 239, 206);
+  transition: 0.3s;
 }
 
 .logo_deco {
