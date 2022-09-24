@@ -19,6 +19,7 @@
     </div>
   </div>
 </template>
+
 <script>
 export default {
   data() {
@@ -30,21 +31,21 @@ export default {
 };
 </script>
 <style>
-/* .side_bar_container_top {
-  position: absolute;
-  bottom: 0;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  pointer-events: none;
-}
+@keyframes sidebar_slideup {
+  0% {
+    opacity: 0;
+    bottom: -100%;
+  }
 
-.side_bar_container {
-  width: 85vw;
-  z-index: 10;
-  display: flex;
-  justify-content: space-between;
-} */
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+    bottom: 0;
+  }
+}
 
 .deco_line {
   margin-top: 2rem;
@@ -58,6 +59,8 @@ export default {
   align-items: center;
   justify-content: flex-end;
   writing-mode: vertical-rl;
+  animation-duration: 1.4s;
+  animation-name: sidebar_slideup;
 }
 
 .side_bar_right_container {
@@ -68,6 +71,9 @@ export default {
   justify-content: flex-end;
   align-items: center;
   writing-mode: vertical-rl;
+  font-family: var(--font-mono);
+  animation-duration: 1.4s;
+  animation-name: sidebar_slideup;
 }
 
 .e_mail {

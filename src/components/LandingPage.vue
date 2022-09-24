@@ -1,5 +1,5 @@
 <template>
-  <div class="landing_page_container_top">
+  <div class="landing_page_container_top" ref="test">
     <div class="landing_page_container">
       <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
       <button class="landing_page_button" @click="handleClick">
@@ -11,24 +11,9 @@
 
 <script>
 export default {
-  mounted() {
-    const scrollElement = document.getElementById("landing_page");
-    window.addEventListener("scroll", this.handleScroll(scrollElement));
-  },
-
   methods: {
-    handleScroll(e) {
-      // const windowScrollY = window.scrollY;
-      console.log(e);
-      console.log(e.style); // something wrong !!!!!!!!!!!!!
-    },
-
     handleClick() {
       console.log("clicked!");
-      window.scroll({
-        top: 100,
-        behavior: "smooth",
-      });
     },
   },
 };
@@ -76,6 +61,7 @@ export default {
   box-shadow: inset 0 0 0 0 black;
   transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
   user-select: none;
+  font-family: var(--font-mono);
 }
 
 .landing_page_button:hover {

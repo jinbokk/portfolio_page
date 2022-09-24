@@ -67,6 +67,7 @@ export default {
   z-index: 100;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
   transition: 0.5s;
+  font-family: var(--font-mono);
 }
 
 .scrolled {
@@ -139,6 +140,7 @@ export default {
   font-weight: bold;
   transition: 0.3s;
   padding: 0.8rem;
+  font-family: var(--font-mono);
 }
 
 .cover_letter_btn:hover {

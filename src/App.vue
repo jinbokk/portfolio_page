@@ -32,6 +32,17 @@ export default {
 </script>
 
 <style>
+:root {
+  --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text", -apple-system,
+    system-ui, sans-serif;
+  --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
+}
+
+@font-face {
+  font-family: "SF Mono";
+  src: url(./assets/fonts/SFMono-Regular.otf);
+}
+
 html,
 body {
   color: rgb(220, 220, 220);
@@ -42,6 +53,7 @@ body {
   padding: 0;
   overflow: hidden;
   user-select: none;
+  font-family: var(--font-sans);
 }
 
 .scroll_container {
