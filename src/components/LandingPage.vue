@@ -2,7 +2,7 @@
   <div class="landing_page_container_top" ref="test">
     <div class="landing_page_container">
       <h1 class="landing_page_title">With<br />Infinite<br />Potential</h1>
-      <button class="landing_page_button" @click="handleClick">
+      <button class="landing_page_button" @click="scrollToPage('about_page')">
         HELLO, JINBOK!
       </button>
     </div>
@@ -14,6 +14,12 @@ export default {
   methods: {
     handleClick() {
       console.log("clicked!");
+    },
+
+    scrollToPage(id) {
+      document.getElementById(id).scrollIntoView({
+        behavior: "smooth",
+      });
     },
   },
 };

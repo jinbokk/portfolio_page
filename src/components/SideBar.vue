@@ -39,11 +39,12 @@ export default {
 
   50% {
     opacity: 0.5;
+    bottom: 1%;
   }
 
   100% {
     opacity: 1;
-    bottom: 0;
+    bottom: 0%;
   }
 }
 

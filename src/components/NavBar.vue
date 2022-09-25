@@ -30,22 +30,7 @@ export default {
     };
   },
 
-  mounted() {
-    window.addEventListener("scroll", this.updateScroll);
-  },
-
   methods: {
-    updateScroll() {
-      const scrollPositionY = window.scrollY;
-      if (scrollPositionY > window.innerHeight - 200) {
-        this.handleScroll = true;
-        return;
-      } else if (scrollPositionY <= window.innerHeight - 200) {
-        this.handleScroll = false;
-      }
-      this.scrollPositionY = false;
-    },
-
     scrollToPage(id) {
       document.getElementById(id).scrollIntoView({
         behavior: "smooth",
